@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Administración de artículos</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <table>
+        <tr>
+          <th>Código</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+          <th>Borrar</th>
+          <th>Seleccionar</th>
+        </tr>
+        <tr *ngFor="let articulo of articulos" >
+          <td> {{articulo.id}} </td>
+          <td> {{articulo.descripcion}} </td>
+          <td> {{articulo.precio}} </td>
+          <td> <button value="{{articulo.id}}">Borrar</button> </td>
+          <td> <button value="{{articulo.id}}">Seleccionar</button> </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-4">
+      <div>
+        <label for="">Código:</label>
+        <input type="text">
+      </div>
+      <div>
+        <label for="">Descripción:</label>
+        <input type="text">
+      </div>
+      <div>
+        <label for="">Precio:</label>
+        <input type="text">
+      </div>
+      <button>
+        Agregar
+      </button>
+      <button>
+        Modificar
+      </button>
+    </div>
+</div>
