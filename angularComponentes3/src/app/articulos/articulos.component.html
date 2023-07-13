@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-8">
+        <table>
+        <tr>
+            <th>Código</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Borrar</th>
+            <th>Seleccionar</th>
+        </tr>
+        <tr *ngFor="let articulo of articulos" >
+            <td> {{articulo.id}} </td>
+            <td> {{articulo.descripcion}} </td>
+            <td> {{articulo.precio}} </td>
+            <td> <button (click)="borrarArticulo(articulo.id)">Borrar</button> </td>
+            <td> <button (click)="seleccionarArticulo(articulo.id)">Seleccionar</button> </td>
+        </tr>
+        </table>
+    </div>
+    <div class="col-4">
+        <div>
+        <label for="">Código:</label>
+        <input type="number" #nuevoCodigo >
+        </div>
+        <div>
+        <label for="">Descripción:</label>
+        <input type="text" #nuevaDescripcion >
+        </div>
+        <div>
+        <label for="">Precio:</label>
+        <input type="number" #nuevoPrecio >
+        </div>
+        <div>
+            <button (click)="agregarArticulo(nuevoCodigo.value, nuevaDescripcion.value, nuevoPrecio.value)" >Agregar</button>
+            <button (click)="modificarArticulo(nuevoCodigo.value, nuevaDescripcion.value, nuevoPrecio.value)" >Modificar</button>
+        </div>
+        <p *ngIf="mostrarError" >Selecciona la fila que quieres borrar</p>
+    </div>
+</div>
